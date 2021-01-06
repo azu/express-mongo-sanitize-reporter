@@ -36,7 +36,7 @@ app.use(bodyParser.json());
 // To remove data, use:
 - app.use(mongoSanitize());
 + app.use(mongoSanitize({
-+   report: (req, key) => sendLog(req, key); // sendLog is your function
++   report: (req, key) => console.warn("This request will drop", req);
 + }));
 ```
 
