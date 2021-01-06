@@ -1,6 +1,6 @@
 {
   "name": "express-mongo-sanitize-reporter",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Dry-Run mode for express-mongo-sanitize.",
   "keywords": [
     "express",
