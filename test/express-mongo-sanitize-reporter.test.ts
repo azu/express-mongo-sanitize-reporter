@@ -7,8 +7,16 @@ import assert from "assert";
 describe("express-mongo-sanitize-reporter", function () {
     it("should callback report", (done) => {
         const tracker = new assert.CallTracker();
-        const callsFunc = tracker.calls((_req: Request, key: string) => {
+        const callsFunc = tracker.calls((_req: Request, key: string, value: any) => {
             assert.strictEqual(key, "body");
+            assert.deepStrictEqual(value, {
+                q: "search",
+                is: true,
+                and: 1,
+                even: null,
+                $where: "malicious",
+                "dotted.data": "some_data"
+            });
         }, 1);
         const app = express();
         app.use(bodyParser.urlencoded({ extended: true }));
@@ -33,7 +41,6 @@ describe("express-mongo-sanitize-reporter", function () {
                 is: true,
                 and: 1,
                 even: null,
-                stop: undefined,
                 $where: "malicious",
                 "dotted.data": "some_data"
             })

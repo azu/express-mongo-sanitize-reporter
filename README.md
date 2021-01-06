@@ -36,7 +36,7 @@ app.use(bodyParser.json());
 
 // To report data, use:
 app.use(mongoSanitize({
-  report: (req, key) => console.warn("This request will be invalid", req)
+  report: (req, key, value) => console.warn("This request will be invalid", req)
 }));
 ```
 
@@ -56,7 +56,7 @@ app.use(bodyParser.json());
 // To remove data, use:
 + app.use(mongoSanitize());
 - app.use(mongoSanitize({
--   report: (req, key) => console.warn("This request will be invalid", req)
+-   report: (req, key, value) => console.warn("This request will be invalid", req)
 - }));
 ```
 
