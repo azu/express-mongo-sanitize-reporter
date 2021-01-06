@@ -8,7 +8,7 @@ This express middleware does not drop sanitized property. Instead of it, It just
 
 [express-mongo-sanitize](https://github.com/fiznool/express-mongo-sanitize) drop invalid property from request.
 
-I want to check that the application use `$` and `.` as valid request before introducing [express-mongo-sanitize](https://github.com/fiznool/express-mongo-sanitize).
+I want to check that the application use `$` and `.` as valid case before introducing [express-mongo-sanitize](https://github.com/fiznool/express-mongo-sanitize).
 
 So, I want to get dry-run/report-only mode for [express-mongo-sanitize](https://github.com/fiznool/express-mongo-sanitize).
 
