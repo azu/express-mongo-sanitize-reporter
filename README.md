@@ -20,13 +20,14 @@ Install with [npm](https://www.npmjs.com/):
 
 ## Usage
 
-Dry-Run mode:
+You can set `report` option for this middleware.
 
-```diff
+It is dry-run mode.
+
+```ts
 import express from 'express';
 import bodyParser from 'body-parser'; 
-- import mongoSanitize from 'express-mongo-sanitize';
-+ import mongoSanitize from 'express-mongo-sanitize-reporter';
+import mongoSanitize from 'express-mongo-sanitize-reporter';
 
 const app = express();
 
@@ -34,10 +35,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 // To report data, use:
-- app.use(mongoSanitize());
-+ app.use(mongoSanitize({
-+   report: (req, key) => console.warn("This request will be invalid", req);
-+ }));
+app.use(mongoSanitize({
+  report: (req, key) => console.warn("This request will be invalid", req)
+}));
 ```
 
 Sanitizing mode:
@@ -56,7 +56,7 @@ app.use(bodyParser.json());
 // To remove data, use:
 + app.use(mongoSanitize());
 - app.use(mongoSanitize({
--   report: (req, key) => console.warn("This request will be invalid", req);
+-   report: (req, key) => console.warn("This request will be invalid", req)
 - }));
 ```
 
