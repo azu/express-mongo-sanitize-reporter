@@ -56,7 +56,7 @@ app.use(bodyParser.json());
 // To remove data, use:
 + app.use(mongoSanitize());
 - app.use(mongoSanitize({
--   report: (req, key) => sendLog(req, key);
+-   report: (req, key) => console.warn("This request will be invalid", req);
 - }));
 ```
 
