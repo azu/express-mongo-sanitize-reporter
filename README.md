@@ -1,3 +1,9 @@
+# Warning :warning:
+
+express-mongo-sanitize support `dryRun` option.
+
+Please use [express-mongo-sanitize](https://github.com/fiznool/express-mongo-sanitize).
+
 # express-mongo-sanitize-reporter
 
 Dry-Run mode for [express-mongo-sanitize](https://github.com/fiznool/express-mongo-sanitize).
